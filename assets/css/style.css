@@ -1023,3 +1023,29 @@ img{
 }
 
 }
+
+.mini-calendar{
+    display:grid;
+    grid-template-columns:repeat(7,minmax(0,1fr));
+    gap:8px;
+}
+
+.mini-calendar .calendar-cell{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:42px;
+    border-radius:10px;
+    background:var(--surface-2);
+}
+
+.mini-calendar .calendar-header{
+    background:transparent;
+    font-weight:600;
+}
+
+.mini-calendar .is-today{
+    background:#2563eb;
+    color:#fff;
+    font-weight:700;
+}
