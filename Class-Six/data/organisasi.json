@@ -1,8 +1,0 @@
-[
-  { "id": "org-001", "position": "Ketua Kelas", "name": "Muhammad Naufal Assegaf", "photo": "", "order": 1, "description": "Coordinates class discussion and represents student voice." },
-  { "id": "org-002", "position": "Wakil Ketua", "name": "Safira Azkya", "photo": "", "order": 2, "description": "Supports class leadership and daily coordination." },
-  { "id": "org-003", "position": "Sekretaris", "name": "Kirana Maulidda", "photo": "", "order": 3, "description": "Keeps class notes, minutes, and written reminders organized." },
-  { "id": "org-004", "position": "Bendahara", "name": "Muhammad Rizky Saputra", "photo": "", "order": 4, "description": "Manages class contribution records transparently." },
-  { "id": "org-005", "position": "Koordinator Kebersihan", "name": "Adel Fathika Putri", "photo": "", "order": 5, "description": "Keeps cleaning duties fair, clear, and consistent." },
-  { "id": "org-006", "position": "Koordinator Kreatif", "name": "Dzaky Almahir Jamil", "photo": "", "order": 6, "description": "Helps prepare class displays, events, and creative projects." }
-]
