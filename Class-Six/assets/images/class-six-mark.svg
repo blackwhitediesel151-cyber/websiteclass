@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">CLASS SIX mark</title>
+  <desc id="desc">A blue classroom portal badge with the letters CS.</desc>
+  <defs>
+    <linearGradient id="g" x1="20" x2="140" y1="20" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="0.55" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="34" fill="url(#g)"/>
+  <path d="M36 48c0-10 8-18 18-18h52c10 0 18 8 18 18v64c0 10-8 18-18 18H54c-10 0-18-8-18-18V48Z" fill="#fff" opacity=".16"/>
+  <path d="M50 56h60M50 80h60M50 104h38" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".82"/>
+  <text x="80" y="93" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" text-anchor="middle">CS</text>
+</svg>

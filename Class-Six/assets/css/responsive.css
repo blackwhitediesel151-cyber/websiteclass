@@ -1,0 +1,139 @@
+@media (max-width: 1060px) {
+  .grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .landing-hero {
+    grid-template-columns: 1fr;
+    padding-top: 18px;
+  }
+
+  .portal-preview {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 920px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: min(310px, calc(100vw - 64px));
+    transform: translateX(-105%);
+    transition: transform 200ms ease;
+  }
+
+  body.nav-open .sidebar {
+    transform: translateX(0);
+  }
+
+  .content-area {
+    grid-template-rows: 66px minmax(0, 1fr);
+  }
+
+  .topbar {
+    min-height: 66px;
+    padding: 0 16px;
+  }
+
+  .mobile-menu {
+    display: inline-flex;
+  }
+
+  .page {
+    width: min(100% - 28px, 1180px);
+    padding-top: 20px;
+  }
+
+  .grid.three,
+  .grid.two,
+  .about-band {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 680px) {
+  body {
+    font-size: 15px;
+  }
+
+  .grid.four {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-nav,
+  .landing-hero {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .landing-nav {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .stats-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-chart {
+    height: 150px;
+  }
+
+  .topbar-actions .admin-kicker,
+  .topbar-actions .breadcrumb {
+    display: none;
+  }
+
+  .admin-form-grid,
+  .input-row,
+  .manager-card,
+  .option-row {
+    grid-template-columns: 1fr;
+  }
+
+  .manager-card .actions {
+    justify-content: flex-start;
+  }
+
+  .calendar-grid,
+  .mini-calendar {
+    gap: 4px;
+  }
+
+  .calendar-cell {
+    min-height: 88px;
+    padding: 7px;
+  }
+
+  .event-chip {
+    font-size: 0.68rem;
+  }
+
+  .modal-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 92vh;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+}
