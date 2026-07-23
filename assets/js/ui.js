@@ -378,20 +378,56 @@
     });
   }
 
-  function renderMiniCalendar(date) {
-    const selected = date || new Date();
-    const year = selected.getFullYear();
-    const month = selected.getMonth();
-    const first = new Date(year, month, 1);
-    const days = new Date(year, month + 1, 0).getDate();
-    const offset = (first.getDay() + 6) % 7;
-    const today = new Date();
-    const labels = ["S", "S", "R", "K", "J", "S", "M"];
-    let html = labels.map((label) => `<span><strong>${label}</strong></span>`).join("");
-    for (let i = 0; i < offset; i += 1) html += "<span></span>";
-    for (let day = 1; day <= days; day += 1) {
-      const isToday = year === today.getFullYear() && month === today.getMonth() && day === today.getDate();
-      html += `<span class="${isToday ? "is-today" : ""}">${day}</span>`;
+function renderMiniCalendar(date) {
+  const selected = date || new Date();
+
+  const year = selected.getFullYear();
+  const month = selected.getMonth();
+
+  const first = new Date(year, month, 1);
+  const days = new Date(year, month + 1, 0).getDate();
+
+  const offset = (first.getDay() + 6) % 7;
+
+  const today = new Date();
+
+  const labels = ["Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Min"];
+
+  let html = "";
+
+  labels.forEach(label => {
+    html += `
+      <div class="calendar-cell calendar-header">
+        <strong>${label}</strong>
+      </div>
+    `;
+  });
+
+  for (let i = 0; i < offset; i++) {
+    html += `<div class="calendar-cell empty"></div>`;
+  }
+
+  for (let day = 1; day <= days; day++) {
+
+    const isToday =
+      today.getFullYear() === year &&
+      today.getMonth() === month &&
+      today.getDate() === day;
+
+    html += `
+      <div class="calendar-cell ${isToday ? "is-today" : ""}">
+        ${day}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="calendar-grid mini-calendar">
+      ${html}
+    </div>
+  `;
+}
+  
     }
     return `<div class="mini-calendar">${html}</div>`;
   }
