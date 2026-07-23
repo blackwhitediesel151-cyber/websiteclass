@@ -1,0 +1,88 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(2deg);
+  }
+}
+
+.fade-in,
+.card,
+.panel,
+.stat-card,
+.page-header {
+  animation: fadeUp 420ms ease both;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ripple.is-rippling::after {
+  left: var(--ripple-x);
+  top: var(--ripple-y);
+  animation: ripple 520ms ease;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.48;
+  }
+  100% {
+    transform: scale(18);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

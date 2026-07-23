@@ -1,0 +1,7 @@
+[
+  { "id": "cal-001", "title": "Class Project Exhibition", "date": "2026-07-28", "type": "School Activity", "color": "#2563eb", "description": "Students present small group projects to the class." },
+  { "id": "cal-002", "title": "Mathematics Daily Test", "date": "2026-08-05", "type": "Exam", "color": "#dc2626", "description": "Daily assessment for fractions and geometry review." },
+  { "id": "cal-003", "title": "Independence Day Preparation", "date": "2026-08-15", "type": "School Activity", "color": "#0f9f6e", "description": "Class decoration and practice for school celebration." },
+  { "id": "cal-004", "title": "Independence Day Holiday", "date": "2026-08-17", "type": "Holiday", "color": "#d97706", "description": "National holiday." },
+  { "id": "cal-005", "title": "Mid-Semester Assessment", "date": "2026-09-14", "type": "Exam", "color": "#7c3aed", "description": "First day of mid-semester assessment week." }
+]
