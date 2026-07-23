@@ -140,10 +140,5 @@
     Utils.$("#calendarMonth", root).addEventListener("change", render);
     Utils.$("#calendarType", root).addEventListener("change", render);
     render();
-    .mini-calendar{
-    display:grid;
-    grid-template-columns:repeat(7,minmax(0,1fr));
-    gap:8px;
-}
   };
 })();
