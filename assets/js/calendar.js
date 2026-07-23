@@ -14,24 +14,59 @@
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   }
 
-  function renderCalendar(monthValue, events) {
-    const selected = Utils.fromMonthInput(monthValue);
-    const year = selected.getFullYear();
-    const month = selected.getMonth();
-    const first = new Date(year, month, 1);
-    const days = new Date(year, month + 1, 0).getDate();
-    const offset = (first.getDay() + 6) % 7;
-    const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    let html = labels.map((label) => `<div class="calendar-cell"><strong>${label}</strong></div>`).join("");
-    for (let i = 0; i < offset; i += 1) html += '<div class="calendar-cell is-muted"></div>';
-    for (let day = 1; day <= days; day += 1) {
-      const key = dateKey(new Date(year, month, day));
-      const dayEvents = events.filter((event) => event.date === key);
-      html += `
-        <div class="calendar-cell">
-          <strong>${day}</strong>
-          ${dayEvents.map((event) => `<span class="event-chip" style="background:${Utils.escapeHtml(event.color || "#2563eb")}">${Utils.escapeHtml(event.title)}</span>`).join("")}
-        </div>
+function renderCalendar(monthValue, events) {
+  const selected = Utils.fromMonthInput(monthValue);
+  const year = selected.getFullYear();
+  const month = selected.getMonth();
+
+  const first = new Date(year, month, 1);
+  const days = new Date(year, month + 1, 0).getDate();
+
+  const offset = (first.getDay() + 6) % 7;
+  const labels = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+  let html = "";
+
+  labels.forEach(label => {
+    html += `
+      <div class="calendar-cell calendar-head">
+        <strong>${label}</strong>
+      </div>
+    `;
+  });
+
+  for (let i = 0; i < offset; i++) {
+    html += `<div class="calendar-cell is-muted"></div>`;
+  }
+
+  for (let day = 1; day <= days; day++) {
+
+    const key = dateKey(new Date(year, month, day));
+
+    const dayEvents = events.filter(e => e.date === key);
+
+    html += `
+      <div class="calendar-cell">
+        <strong>${day}</strong>
+
+        ${dayEvents.map(event => `
+          <span
+            class="event-chip"
+            style="background:${Utils.escapeHtml(event.color || "#2563eb")}">
+            ${Utils.escapeHtml(event.title)}
+          </span>
+        `).join("")}
+
+      </div>
+    `;
+  }
+
+  return `
+    <div class="calendar-grid">
+      ${html}
+    </div>
+  `;
+}
       `;
     }
     return `<div class="calendar-grid">${html}</div>`;
