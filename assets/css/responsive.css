@@ -137,3 +137,76 @@
     border-radius: var(--radius) var(--radius) 0 0;
   }
 }
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width:768px){
+
+.page{
+    width:100%;
+    padding:16px;
+}
+
+.content-area{
+    width:100%;
+    overflow-x:hidden;
+}
+
+.table-wrapper{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+table{
+    min-width:650px;
+}
+
+.card,
+.glass{
+    padding:16px;
+}
+
+.page-header h1{
+    font-size:2rem;
+}
+
+.page-header{
+    gap:8px;
+}
+
+.topbar{
+    padding:0 12px;
+}
+
+.topbar-right{
+    gap:8px;
+}
+
+.stat-grid,
+.grid.two,
+.grid.three,
+.grid.four{
+    grid-template-columns:1fr;
+}
+
+.hero-title{
+    font-size:2rem;
+}
+
+.hero-actions{
+    flex-direction:column;
+}
+
+.btn{
+    width:100%;
+}
+
+.preview-screen{
+    width:100%;
+}
+
+.sidebar{
+    z-index:9999;
+}
+
+}
