@@ -975,3 +975,51 @@ tr:last-child td {
   font-size: 0.88rem;
   text-align: center;
 }
+
+/* ================= MOBILE FIX ================= */
+
+@media (max-width:768px){
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+.app-shell{
+    display:block;
+    width:100%;
+    min-width:0;
+}
+
+.content-area{
+    width:100%;
+    min-width:0;
+}
+
+.page{
+    width:100%;
+    max-width:100%;
+    padding:16px;
+}
+
+.topbar{
+    padding:0 12px;
+}
+
+table{
+    min-width:600px;
+}
+
+.table-wrap{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+}
